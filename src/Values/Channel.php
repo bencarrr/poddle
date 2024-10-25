@@ -10,12 +10,12 @@ class Channel extends Serializable
         public readonly string $url,
         public readonly string $title,
         public readonly string $description,
-        public readonly string $link,
         public readonly string $language,
         public readonly CategoryCollection $categories,
         public readonly bool $explicit,
         public readonly string $image,
         public readonly ChannelMetadata $metadata,
+        public readonly ?string $link = null,
     ) {
     }
 
@@ -25,12 +25,12 @@ class Channel extends Serializable
             url: Arr::get($data, 'url'),
             title: Arr::get($data, 'title'),
             description: Arr::get($data, 'description'),
-            link: Arr::get($data, 'link'),
             language: Arr::get($data, 'language'),
             categories: CategoryCollection::fromArray(Arr::get($data, 'categories', [])),
             explicit: Arr::get($data, 'explicit', false),
             image: Arr::get($data, 'image'),
             metadata: ChannelMetadata::fromArray(Arr::get($data, 'metadata', [])),
+            link: Arr::get($data, 'link'),
         );
     }
 

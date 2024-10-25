@@ -56,12 +56,12 @@ class Poddle
             url: $this->getSoleValue('atom:link@href'),
             title: $this->getSoleValue('title'),
             description: $this->getSoleValue('description'),
-            link: $this->getSoleValue('link'),
             language: $this->getSoleValue('language'),
             categories: $this->getCategories(),
             explicit: $this->getSoleValue('itunes:explicit') === 'yes',
             image: $this->getSoleValue('itunes:image@href'),
-            metadata: $this->getMetadata()
+            metadata: $this->getMetadata(),
+            link: $this->getSoleValue('link'),
         );
     }
 
